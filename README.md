@@ -1,4 +1,4 @@
-# merchant-analytics-fraud-platform
+# Merchant-analytics-fraud-platform
 Distributed merchant analytics and fraud detection platform
 
 # Schedules
