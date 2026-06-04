@@ -24,7 +24,7 @@ const envSchema = z.object({
 
   RABBITMQ_URL: z.string(),
 
-  JWT_SECRET: z.string().optional(),
+  JWT_SECRET: z.string().min(10),
 });
 
 const parsedEnv = envSchema.safeParse(process.env);
