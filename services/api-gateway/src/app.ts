@@ -5,6 +5,7 @@ import helmet from "helmet";
 import { requestLoggerMiddleware } from "@shared/middleware/request-logger.middleware";
 import { errorMiddleware } from "@shared/middleware/error.middleware";
 import { notFoundMiddleware } from "@shared/middleware/not-found.middleware";
+import authRoutes from "./routes/auth.routes";
 
 const app = express();
 
@@ -21,6 +22,7 @@ app.get("/health", (_, res) => {
   });
 });
 
+app.use("/auth", authRoutes);
 app.use(notFoundMiddleware);
 
 app.use(errorMiddleware);
