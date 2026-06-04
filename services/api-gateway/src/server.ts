@@ -3,10 +3,12 @@ import app from "./app";
 import { env } from "@shared/config/env";
 import { logger } from "@shared/logger/logger";
 import { connectPostgres } from "@shared/database/postgres";
+import { runMigrations } from "@shared/database/migration-runner";
 
 const startServer = async () => {
   try {
     await connectPostgres();
+    await runMigrations();
 
     app.listen(env.PORT, () => {
       logger.info(`API Gateway running on port ${env.PORT}`);
